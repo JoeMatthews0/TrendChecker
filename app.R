@@ -107,15 +107,12 @@ ui <- fluidPage(
                           inline   = TRUE)
       ),
       column(9,
-        # Which severities do we want to consider? Only available if analysing collisions
-        conditionalPanel(
-          condition = "input.metric == 'collisions'",
+        # Which severities do we want to consider?
           checkboxGroupInput("severities", "Severity levels",
             choiceNames  = unname(sev_labels[all_sevs]),
             choiceValues = all_sevs,
             selected     = all_sevs,
             inline       = TRUE)
-        )
       )
     )
   ),
